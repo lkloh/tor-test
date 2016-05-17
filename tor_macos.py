@@ -3,12 +3,17 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium import webdriver
 from selenium.webdriver.common.proxy import *
 
-proxy_address = "127.0.0.1:9050"
-sproxy = Proxy({
-    'proxyType': ProxyType.MANUAL,
-    'httpProxy': proxy_address,
-})
+PROXY_HOST = '127.0.0.1'
+PROXY_PORT = '9050'
 
+def install_proxy(PROXY_HOST, PROXY_PORT):
+    fp = webdriver.FirefoxProfile()
+    fp.set_preference("network.proxy.type", 4)  
+    fp.set_preference("network.proxy.socks",PROXY_HOST)
+    fp.set_preference("network.proxy.socks_port",int(PROXY_PORT))   
+    fp.set_preference("general.useragent.override","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A")
+    fp.update_preferences()
+    return webdriver.Firefox(firefox_profile=fp)
 
 
 '''path to the firefox binary inside the Tor package'''
@@ -34,21 +39,11 @@ if __name__ == "__main__":
         vdisplay = Xvfb(width=1280, height=720)
         vdisplay.start()
 
-    browser = get_browser(binary=firefox_binary)
-    urls = (
-        ('tor browser check', 'https://check.torproject.org/'),
-        ('ip checker', 'http://icanhazip.com')
-    )
-    for url_name, url in urls:
-        print "getting", url_name, "at", url
-        browser.get(url)
-
-
-
-    driver = webdriver.Firefox(proxy=sproxy)
-    driver.get('https://check.torproject.org/')
-    elem = driver.find_element_by_class_name('content')
-    print elem.get_attribute('innerHTML')
+    
+    driver = install_proxy(PROXY_HOST, PROXY_PORT)
+    driver.get('http://icanhazip.com')
+    elem = driver.find_element_by_tag_name('pre')
+    print "ip: %s" % elem.get_attribute('innerHTML')
 
     if (platform.system()=='Linux'):
         vdisplay.kill()
