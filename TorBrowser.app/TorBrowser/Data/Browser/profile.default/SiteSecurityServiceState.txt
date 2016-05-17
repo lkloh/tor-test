@@ -1,0 +1,3 @@
+dist.torproject.org:HSTS	2	16938	1479265715776,1,0
+blocklist.addons.mozilla.org:HSTS	2	16938	1494989099207,1,0
+www.torproject.org:HSTS	2	16938	1479281762187,1,0

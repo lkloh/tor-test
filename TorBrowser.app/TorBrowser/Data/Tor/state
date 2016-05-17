@@ -1,0 +1,55 @@
+# Tor state file last generated on 2016-05-17 17:14:42 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+EntryGuard bauruine204 322C6E3A973BC10FC36DE3037AD27BC89F14723B DirCache
+EntryGuardAddedBy 322C6E3A973BC10FC36DE3037AD27BC89F14723B 0.2.7.6 2016-04-08 18:54:11
+EntryGuardPathBias 78.000000 77.000000 77.000000 0.000000 0.000000 4.000000
+EntryGuardPathUseBias 15.000000 15.000000
+EntryGuard mrshuTor01 0F85E6DB0E4A3B6FDDF7C9452C9B5D089B11979D DirCache
+EntryGuardAddedBy 0F85E6DB0E4A3B6FDDF7C9452C9B5D089B11979D 0.2.7.6 2016-04-20 03:40:34
+EntryGuardPathBias 67.000000 64.000000 64.000000 0.000000 0.000000 1.000000
+EntryGuardPathUseBias 1.000000 1.000000
+EntryGuard TorFeliwyn 482BB9CC43A961428AD1AC8970CE77315387F85C DirCache
+EntryGuardAddedBy 482BB9CC43A961428AD1AC8970CE77315387F85C 0.2.7.6 2016-04-18 19:15:50
+EntryGuard c4k3KS1 A12A3536AD288D34071C6ACA76D0BE5CF6318F1C NoDirCache
+EntryGuardDownSince 2016-05-16 02:36:32 2016-05-16 02:36:32
+EntryGuardAddedBy A12A3536AD288D34071C6ACA76D0BE5CF6318F1C 0.2.7.6 2016-04-24 17:22:17
+EntryGuard catatafish2 1AC65257D7BFDE7341046625470809693A8ED83E DirCache
+EntryGuardDownSince 2016-05-16 11:27:00 2016-05-17 12:30:19
+EntryGuardAddedBy 1AC65257D7BFDE7341046625470809693A8ED83E 0.2.7.6 2016-04-24 23:53:02
+TorVersion Tor 0.2.7.6 (git-7a489a6389110120)
+LastWritten 2016-05-17 21:14:42
+TotalBuildTimes 144
+CircuitBuildAbandonedCount 3
+CircuitBuildTimeBin 325 1
+CircuitBuildTimeBin 375 7
+CircuitBuildTimeBin 425 13
+CircuitBuildTimeBin 475 19
+CircuitBuildTimeBin 525 20
+CircuitBuildTimeBin 575 16
+CircuitBuildTimeBin 625 10
+CircuitBuildTimeBin 675 5
+CircuitBuildTimeBin 725 12
+CircuitBuildTimeBin 775 3
+CircuitBuildTimeBin 825 3
+CircuitBuildTimeBin 875 2
+CircuitBuildTimeBin 925 9
+CircuitBuildTimeBin 975 1
+CircuitBuildTimeBin 1025 1
+CircuitBuildTimeBin 1075 3
+CircuitBuildTimeBin 1125 1
+CircuitBuildTimeBin 1175 1
+CircuitBuildTimeBin 1225 1
+CircuitBuildTimeBin 1325 1
+CircuitBuildTimeBin 1475 1
+CircuitBuildTimeBin 1525 2
+CircuitBuildTimeBin 1725 1
+CircuitBuildTimeBin 1775 1
+CircuitBuildTimeBin 1925 1
+CircuitBuildTimeBin 3075 1
+CircuitBuildTimeBin 3175 1
+CircuitBuildTimeBin 4075 1
+CircuitBuildTimeBin 8575 1
+CircuitBuildTimeBin 9425 1
+CircuitBuildTimeBin 17825 1

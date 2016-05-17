@@ -3,12 +3,14 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium import webdriver
 
 
-# path to the firefox binary inside the Tor package
-binary = '/Applications/TorBrowser.app/Contents/MacOS/firefox'
+'''path to the firefox binary inside the Tor package'''
+binary = '/Users/lkloh/tor-test/TorBrowser.app/Contents/MacOS/firefox'
+#binary = '/Applications/TorBrowser.app/Contents/MacOS/firefox'
+
+
 if os.path.exists(binary) is False:
     raise ValueError("The binary path to Tor firefox does not exist.")
 firefox_binary = FirefoxBinary(binary)
-
 
 browser = None
 def get_browser(binary=None):
@@ -29,4 +31,3 @@ if __name__ == "__main__":
         browser.get(url)
 
 
-        
