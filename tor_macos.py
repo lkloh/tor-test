@@ -5,7 +5,7 @@ from selenium import webdriver
 
 
 '''path to the firefox binary inside the Tor package'''
-binary = '/Users/lkloh/tor-test/TorBrowser.app/Contents/MacOS/firefox'
+binary = './TorBrowser.app/Contents/MacOS/firefox'
 #binary = '/Applications/TorBrowser.app/Contents/MacOS/firefox'
 
 
