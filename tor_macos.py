@@ -1,6 +1,13 @@
 import os, platform
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium import webdriver
+from selenium.webdriver.common.proxy import *
+
+proxy_address = "127.0.0.1:9050"
+sproxy = Proxy({
+    'proxyType': ProxyType.MANUAL,
+    'httpProxy': proxy_address,
+})
 
 
 
@@ -35,6 +42,13 @@ if __name__ == "__main__":
     for url_name, url in urls:
         print "getting", url_name, "at", url
         browser.get(url)
+
+
+
+    driver = webdriver.Firefox(proxy=sproxy)
+    driver.get('https://check.torproject.org/')
+    elem = driver.find_element_by_class_name('content')
+    print elem.get_attribute('innerHTML')
 
     if (platform.system()=='Linux'):
         vdisplay.kill()
