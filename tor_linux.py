@@ -20,11 +20,12 @@ if __name__ == "__main__":
 
     driver = webdriver.Firefox(proxy=sproxy)
     driver.get('https://check.torproject.org/')
-    elem = driver.get_element_by_class_name('content')
+    elem = driver.find_element_by_class_name('content')
     print elem.get_attribute('innerHTML')
 
     if (platform.system()=='Linux'):
         vdisplay.kill()
+
 
 
 
