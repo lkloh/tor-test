@@ -1,6 +1,7 @@
-import os
+import os, platform
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium import webdriver
+
 
 
 '''path to the firefox binary inside the Tor package'''
@@ -21,6 +22,11 @@ def get_browser(binary=None):
     return browser
 
 if __name__ == "__main__":
+    if (platform.system()=='Linux'):
+        from xvfbwrapper import Xvfb
+        vdisplay = Xvfb(width=1280, height=720)
+        vdisplay.start()
+
     browser = get_browser(binary=firefox_binary)
     urls = (
         ('tor browser check', 'https://check.torproject.org/'),
@@ -29,5 +35,8 @@ if __name__ == "__main__":
     for url_name, url in urls:
         print "getting", url_name, "at", url
         browser.get(url)
+
+    if (platform.system()=='Linux'):
+        vdisplay.kill()
 
 
