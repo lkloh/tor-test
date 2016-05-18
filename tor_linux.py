@@ -11,8 +11,7 @@ def install_proxy(PROXY_HOST, PROXY_PORT):
     fp.set_preference("network.proxy.type", 1)  
     fp.set_preference("network.proxy.socks",PROXY_HOST)
     fp.set_preference("network.proxy.socks_port",int(PROXY_PORT))   
-    fp.set_preference("general.useragent.override","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A")
-    fp.update_preferences()
+    print 'proxy set'
     return webdriver.Firefox(firefox_profile=fp)
 
 
