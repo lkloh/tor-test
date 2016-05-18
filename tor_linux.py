@@ -5,7 +5,7 @@ from selenium.webdriver.common.proxy import *
 from xvfbwrapper import Xvfb
 
 PROXY_HOST = '127.0.0.1'
-PROXY_PORT = '8118'
+PROXY_PORT = '9050'
 
 def install_proxy(PROXY_HOST, PROXY_PORT):
     fp = webdriver.FirefoxProfile()
@@ -34,9 +34,9 @@ def get_browser(binary=None):
     return browser
 
 if __name__ == "__main__":
-    vdisplay = Xvfb(width=1280, height=720)
-    vdisplay.start()
-    print 'xvfb started'
+    #vdisplay = Xvfb(width=1280, height=720)
+    #vdisplay.start()
+    #print 'xvfb started'
 
     
     driver = install_proxy(PROXY_HOST, PROXY_PORT)
@@ -46,6 +46,6 @@ if __name__ == "__main__":
     elem = driver.find_element_by_tag_name('pre')
     print "ip: %s" % elem.get_attribute('innerHTML')
 
-    vdisplay.kill()
+    #vdisplay.kill()
 
 
