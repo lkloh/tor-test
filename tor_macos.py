@@ -38,10 +38,12 @@ if __name__ == "__main__":
         from xvfbwrapper import Xvfb
         vdisplay = Xvfb(width=1280, height=720)
         vdisplay.start()
+        print 'xvfb started'
 
     
     driver = install_proxy(PROXY_HOST, PROXY_PORT)
     driver.get('http://icanhazip.com')
+    print 'obtained browser'
     elem = driver.find_element_by_tag_name('pre')
     print "ip: %s" % elem.get_attribute('innerHTML')
 
