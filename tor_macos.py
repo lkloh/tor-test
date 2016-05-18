@@ -42,6 +42,8 @@ if __name__ == "__main__":
 
     
     driver = install_proxy(PROXY_HOST, PROXY_PORT)
+    #driver.get('http://icanhazip.com')
+    driver.set_page_load_timeout(30)
     driver.get('http://icanhazip.com')
     print 'obtained browser'
     elem = driver.find_element_by_tag_name('pre')

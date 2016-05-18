@@ -2,6 +2,7 @@ import os, platform
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium import webdriver
 from selenium.webdriver.common.proxy import *
+from xvfbwrapper import Xvfb
 
 PROXY_HOST = '127.0.0.1'
 PROXY_PORT = '8118'
@@ -33,20 +34,18 @@ def get_browser(binary=None):
     return browser
 
 if __name__ == "__main__":
-    if (platform.system()=='Linux'):
-        from xvfbwrapper import Xvfb
-        vdisplay = Xvfb(width=1280, height=720)
-        vdisplay.start()
-        print 'xvfb started'
+    vdisplay = Xvfb(width=1280, height=720)
+    vdisplay.start()
+    print 'xvfb started'
 
     
     driver = install_proxy(PROXY_HOST, PROXY_PORT)
+    driver.set_page_load_timeout(30)
     driver.get('http://icanhazip.com')
     print 'obtained browser'
     elem = driver.find_element_by_tag_name('pre')
     print "ip: %s" % elem.get_attribute('innerHTML')
 
-    if (platform.system()=='Linux'):
-        vdisplay.kill()
+    vdisplay.kill()
 
 
